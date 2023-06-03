@@ -1,110 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鸡的介绍</title>
-    <link rel="stylesheet" href="css/style.css">
+<style>
+/* 设置标题透明 */
+h1 {
+  color: white;
+  background-color: transparent;
+  text-align: center;
+}
 
+/* 设置图片背景，全屏显示 */
+body {
+  background-image: url("https://pic2.imgdb.cn/item/6460d21e0d2dde57772b74db.png");
+  background-size: cover;
+  background-attachment: fixed; /* 设置背景不随页面滚动 */
+}
+
+/* 设置文字颜色和大小 */
+p {
+  color: white;
+  font-size: 20px;
+  margin: 20px;
+}
+</style>
 </head>
-
+<title>洛云凌钰工作室官方网站</title>
 <body>
-    <div id="bigbox">
-        <div id="banner">
-            <img src="picture/banner.png" alt="">
-        </div>
-        <nav>
-            <a class="dangqian" href="">首页</a>
-            <a href="duanwen.html">短文</a>
-            <a href="rizhi.html">日志</a>
-            <a href="liuyan.html">留言板</a>
-        </nav>
-        <div id="main">
-            <div id="main_left">
-                <h2>关于我</h2>
-                <img src="picture/me.png" alt="">
-                <p>
-                    <span>姓名</span>:*****<br>
-                    <span>性别</span>:鸡<br>
-                    <span>爱好</span>:唱跳rap鸡<br>
-                    <span>性格</span> :你干嘛~~~<br>
-                    <span>家乡</span>:地球<br>
-                    <span>专业</span>:趋势
-                </p>
-            </div>
-            <div id="main_right">
-                <h2>热爱生活</h2>
-                <p>
-                    一、岁月从来不曾静好，只是有人在替你背负枷锁，含泪前行。也许是父母，也许是朋友，也许是陌生人……无论是谁，请记得常怀感恩之心。
-                </p>
-                <p>
-                    二、这个世界并不完美，甚至有点残酷。你无法决定下一段旅途遇见的是好事还是坏事，可你能决定面对它们的态度。你看这个世界的角度，决定了这个世界给你的温度。
-                </p>
-                <p>
-                    三、总会有一件事让你瞬间长大，也总会有一个人让你泪如雨下。愿你早日领教这个世界的深深恶意，让自己活得开心得意。
-                </p>
-                <p>
-                    四、想要与众不同，却总随遇而安，想要做很多未做的事，却在现实棘手的吃喝拉撒前低下了头，我们间歇性热血满腔，长时间迷茫犯懒，别等了，再努力试试看！
-                </p>
-                <img src="picture/life.png" alt="">
-            </div>
-        </div>
-        <div id="luxing">
-            <h2>旅行生活</h2>
-            <div>
-                <div id="picture">
-                    <img src="picture/11.png" alt="">
-                    <p>在日月潭</p>
-                </div>
-                <div id="picture">
-                    <img src="picture/22.png" alt="">
-                    <p>
-                        在毛里求斯
-                    </p>
-                </div>
-                <div id="picture">
-                    <img src="picture/33.png" alt="">
-                    <p>
-                        在马尔代夫
-                    </p>
-                </div>
-                <div id="picture">
-                    <img src="picture/44.png" alt="">
-                    <p>
-                        在玉龙雪山
-                    </p>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <p>
-                版权所有©*****
-            </p>
-        </footer>
-    </div>
-</body>
 
-</html>
-<div align="center">
-        <span id="span"></span>
-<script type="text/javascript">
-    function runtime(){
-        // 初始时间，日/月/年 时:分:秒
-        X = new Date("04/05/2023 19:00:30");
-        Y = new Date();
-        T = (Y.getTime()-X.getTime());
-        M = 24*60*60*1000;
-        a = T/M;
-        A = Math.floor(a);
-        b = (a-A)*24;
-        B = Math.floor(b);
-        c = (b-B)*60;
-        C = Math.floor((b-B)*60);
-        D = Math.floor((c-C)*60);
-        //信息写入到DIV中
-        span.innerHTML = "本站已特别艰难地鸽了: "+A+"天"+B+"小时"+C+"分"+D+"秒"
-    }
-    setInterval(runtime, 1000);
+<h1>荔枝点吧</h1>
+
+<!-- 请注意，以下的示例包含超链接，您可能需要手动配置样式使其不变色。如果您嫌麻烦，可以移除。 -->
+<p id="hitokoto">
+  <a href="#" id="hitokoto_text">:D 获取中...</a>
+</p>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.querySelector('#hitokoto_text')
+      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
 </script>
+
+<!-- 插入哔哩哔哩视频 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=26096272&auto=1&height=66"></iframe>
+
+<div style="position: relative; padding: 30% 45%;">
+  <iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;" src="https://player.bilibili.com/player.html?aid=990610203&bvid=BV1sx4y1g7Hh&cid=972069256&page=1&as_wide=1&high_quality=1&danmaku=0" frameborder="no" scrolling="no"> </iframe>
+  </div>
+ 
+
+</body>
+</html>
+<div align="center"></div>
+<span id="jinrishici-sentence"></charset>正在加载今日诗词....</span>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+  <span id="span"></span>
+<script type="text/javascript">
+function runtime(){
+  // 初始时间，日/月/年 时:分:秒
+  X = new Date("04/05/2023 19:00:30");
+  Y = new Date();
+  T = (Y.getTime()-X.getTime());
+  M = 24*60*60*1000;
+  a = T/M;
+  A = Math.floor(a);
+  b = (a-A)*24;
+  B = Math.floor(b);
+  c = (b-B)*60;
+  C = Math.floor((b-B)*60);
+  D = Math.floor((c-C)*60);
+  //信息写入到DIV中
+  span.innerHTML = "本站已特别艰难地运行了: "+A+"天"+B+"小时"+C+"分"+D+"秒"
+}
+setInterval(runtime, 1000);
+</script>
+<body>
+  <div class="container">
+      <div class="header">
+          <h2>联系我</h2>
+          <p>如果你对坤坤感兴趣，或者想和我交流学习，可以通过以下方式联系我。</p>
+          <ul>
+              <li>邮箱：luoyunlingyu@foxmail.com</li>
+              <li>微信：143087058zqz</li>
+              <li>QQ：143087058</li>
+              <li>GitHub：<a href="#">https://github.com/zqzemo</a></li>
+          </ul>
+      </div>
+      <div class="footer">
+          <p>版权所有 © 洛云凌钰工作室 2023</p>
+      </div>
+  </div>
+</body>
